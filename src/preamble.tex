@@ -2,27 +2,36 @@
 
 % Theme
 \usetheme[width=0cm]{Hannover}
-\usecolortheme[named=MidnightBlue]{structure}
+\usecolortheme[named=NavyBlue]{structure}
 \usecolortheme{orchid}
+\beamertemplatenavigationsymbolsempty % remove navigation bars on the bottom
+\setbeamertemplate{footline}[frame number] % set a slide number on the bottom
 
 % Set packages
-\usepackage[T1]{fontenc} 
-\usepackage{tgadventor}
-\usepackage{bm} % For bold math symbols (\bm)
-\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,tgadventor}
+\usepackage{textcomp}
+% \usepackage{bm} % For bold math symbols (\bm)
+% \usepackage{siunitx}
 \usepackage[comma,round]{natbib}
 \usepackage{bibentry} %to suppress bibliography
+\usepackage{caption}
 
 %% List custom commands here: (examples is provided)
 \newcommand{\image}{\includegraphics}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{0.5em}\olditem}
+\AtBeginSection[]{\frame{\sectionpage}}
+%% Remove 'table #' from table caption
+\captionsetup{labelformat=empty}
 
 %% Beamer options
+\setbeamertemplate{items}[square]
 \makeatletter
 \setbeamertemplate{sidebar canvas left}{} % remove sidebar
 \makeatother
-\beamertemplatenavigationsymbolsempty % remove navigation bars on the bottom
 \setbeamercolor{block body}{bg=white} % set block body to white
-\setbeamertemplate{footline}[frame number] % set a slide number on the bottom
 \let\otp\titlepage
 % remove first slide from slide number
 \renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
@@ -34,4 +43,14 @@
         \textbf{\insertframetitle}
   \end{flushleft}
 }
+%% Remove section numbering from sections (#)
+\setbeamertemplate{section page}
+{
+    \begin{centering}
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\textbf{\insertsection}\par
+    \end{beamercolorbox}
+    \end{centering}
+}
 
+\graphicspath{{img/}}
