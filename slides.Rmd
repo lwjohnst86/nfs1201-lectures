@@ -19,6 +19,8 @@ output:
 
 ```{r, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 prodigenr::runSetup('src')
+font_import()
+loadfonts()
 ```
 
 <!--
@@ -52,7 +54,6 @@ prodigenr::runSetup('src')
     - Overall and by province
     - Composition of households
     - Predictors of food insecurity
-- Strategies used to deal with food insecurity
 
 ## Outline
 
@@ -65,7 +66,6 @@ prodigenr::runSetup('src')
     - Overall and by province
     - Composition of households
     - Predictors of food insecurity
-- Strategies used to deal with food insecurity
 
 # Household food insecurity: another window into problems of nutrition inequity in Canada
 
@@ -124,7 +124,7 @@ grViz("
 digraph {
     # add nodes
     node [shape = plaintext
-        fontname = Helvetica]
+        fontname = 'TeX Gyre Adventor']
     A [label = '@@1']
     QlC [label = '@@2']
     QtC [label = '@@3']
@@ -139,6 +139,7 @@ digraph {
 ")
 ```
 
+\centering
 ![Conceptualization](img/diagram-ConceptFI.png)
 
 <!-- Qualitative food selection -->
@@ -162,7 +163,38 @@ months:
 Note:  Prevalence estimates published by Statistics Canada and Health Canada
 only include moderate and severe food insecurity.
 
+## Health Canada’s coding of food insecurity[^hcCoding]
+
+| Category | 10-item adult scale | 8-item child scale |
+|:---------|:--------------------|:-------------------|
+| Food Secure | 0-1 affirmed | 0-1 affirmed |
+| Moderately food insecure | 2-5 affirmed | 2-4 affirmed |
+| Severely food insecure | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
+
+Table: Food insecurity $\geq$ 2 affirmed
+
+[^hcCoding]: [Determining Food Security Status, HC website](http://www.hc-sc.gc.ca/fn-an/surveill/nutrition/commun/insecurit/status-situation-eng.php)
+
+## USDA codings of food insecurity definitions[^usCoding]
+
+<!-- we often compare to the US, and in this case we differ slightly -->
+
+| Category | 10-item adult scale | 8-item child scale |
+|:---------|:--------------------|:-------------------|
+| Food Secure | 0-2 affirmed | 0-1 affirmed |
+| Low food security | 3-5 affirmed | 2-4 affirmed |
+| Very low food security | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
+
+Table: Food insecurity $\geq$ 3 affirmed
+
+<!-- While the US has language that includes marginal food insecurity, their 
+methods haven't changed and they still use these categories -->
+
+[^usCoding]: [Food Security, USDA](http://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/definitions-of-food-security.aspx)
+
 ## Levels of food insecurity[^proof2013]
+
+<!-- Health canada doesn't use the marginal category -->
 
 ![Categories of food insecurity for Canada](img/coding-FoodInsecurity-2013.pdf)
 
@@ -186,33 +218,6 @@ Environmental Nutrition, 2013)
 appropriate because there are meaningful distinctions among marginal, moderate,
 and severe food insecurity.   (Coleman-Jensen, Social Indicators Research 2010)
 
-## Health Canada’s coding of food insecurity[^hcCoding]
-
-| Category | 10-item adult scale | 8-item child scale |
-|:---------|:--------------------|:-------------------|
-| Food Secure | 0-1 affirmed | 0-1 affirmed |
-| Moderately food insecure | 2-5 affirmed | 2-4 affirmed |
-| Severely food insecure | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
-
-Table: Food insecurity $\geq$ 2 affirmed
-
-[^hcCoding]: [Determining Food Security Status, HC website](http://www.hc-sc.gc.ca/fn-an/surveill/nutrition/commun/insecurit/status-situation-eng.php)
-
-## USDA codings of food insecurity definitions[^usCoding]
-
-| Category | 10-item adult scale | 8-item child scale |
-|:---------|:--------------------|:-------------------|
-| Food Secure | 0-2 affirmed | 0-1 affirmed |
-| Low food security | 3-5 affirmed | 2-4 affirmed |
-| Very low food security | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
-
-Table: Food insecurity $\geq$ 3 affirmed
-
-<!-- While the US has language that includes marginal food insecurity, their 
-methods haven't changed and they still use these categories -->
-
-[^usCoding]: [Food Security, USDA](http://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/definitions-of-food-security.aspx)
-
 ## Compared to scales of other countries[^otherCountries]
 
 Comparing the experience of household food insecurity as captured across 22
@@ -235,6 +240,9 @@ Not on scales but recognized in ethnographic work:
 
 [^otherCountries]: Coates et al, J Nutr, 2006
 [^alien]: Hamelin et al, 2002
+
+<!-- you've probably already started to notice the difficulties in measuring
+food insecurity, and what exactly that entails -->
 				
 ## Limitations: HFSSM inconsistently conducted
 
@@ -283,7 +291,6 @@ Note: Last two CCHS were moderate + severe only
     - **Overall and by province**
     - **Composition of households**
     - **Predictors of food insecurity**
-- Strategies used to deal with food insecurity
 
 ## Food insecurity over the last decade[^proof2012]
 
@@ -291,7 +298,6 @@ Note: Last two CCHS were moderate + severe only
 \column{0.5\textwidth}
 \centering
 \image{img/overTime-Numbers-2012.pdf}
-
 \column{0.4\textwidth}
 In 2012, 12.6\% of Canadian households (1.7 million households, or 2.8 million
 adults and 1.15 million children) experienced food insecurity.
@@ -351,18 +357,16 @@ insecurity? -->
 ## Single best predictor of household food insecurity = income[^cchs2011]
 
 ```{r, fig.height=3, fig.width=7}
-incomeFI <-
-    data.frame(
-        Prevalence = c(46.2, 14.8, 6.4, 3.3, 2.0, 0.9),
-        Income = c('$1-10', '$20-30', '$40-50', '$60-70', '$80-90', '$100+')
+data.frame(
+    Prevalence = c(46.2, 14.8, 6.4, 3.3, 2.0, 0.9),
+    Income = c('$1-10', '$20-30', '$40-50', '$60-70', '$80-90', '$100+')
     ) %>% 
-    mutate(Income = factor(Income, levels = unique(Income), ordered = TRUE))
-
-ggplot(incomeFI, aes(Income, Prevalence)) +
+    mutate(Income = factor(Income, levels = unique(Income), ordered = TRUE)) %>%
+    ggplot(aes(Income, Prevalence)) +
     geom_line(aes(group = 1)) +
-    theme_tufte(base_family = 'Helvetica') +
     ylab('Percent Insecure (%)') +
-    xlab('Household income (000s),\nadjusted for household size')
+    xlab('Household income (000s),\nadjusted for household size') +
+    theme_tufte(base_family = 'DejaVu Sans')
 ```
 
 Food insecurity captures material deprivation: Product of income (size,
@@ -435,18 +439,3 @@ Archives of Pediatrics and Adolescent Medicine. 2010; 164(8):754-762.
 
 Tarasuk et al. Chronic Physical and Mental Health Conditions among Adults May
 Increase Vulnerability to Household Food Insecurity.  Journal of Nutrition 2013.
-
-## Experiences of food insecurity
-
-Quebec adults’ accounts of their experiences of food insecurity:
-a profound lack of food choice, monotony of diet
-disruptions to familial dining patterns
-need to engage in highly stigmatized means of food acquisition
-strong feelings of powerlessness, inequity, frustration, alienation 
-			
-
-				(Hamelin et al., Soc Sci & Medicine, 2002)
-
-## References ##
-
-\tiny
