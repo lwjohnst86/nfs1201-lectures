@@ -177,7 +177,9 @@ Table: Food insecurity $\geq$ 2 affirmed
 
 ## USDA codings of food insecurity definitions[^usCoding]
 
-<!-- we often compare to the US, and in this case we differ slightly -->
+<!-- we often compare to the US, and in this case we differ slightly. US and Can
+use the same method to measure food insecurity (ie the same questionnaire), but
+they have a different definition. -->
 
 | Category | 10-item adult scale | 8-item child scale |
 |:---------|:--------------------|:-------------------|
@@ -205,6 +207,8 @@ methods haven't changed and they still use these categories -->
 Why is it distinct and not grouped with 'food secure'?
 
 . . .
+
+<!-- Thoughts? do you think it's reasonable to include this level? -->
 
 - Marginally food insecure households report conditions of reduced food access and
 anxiety about the availability of food.
@@ -302,6 +306,20 @@ Note: Last two CCHS were moderate + severe only
 In 2012, 12.6\% of Canadian households (1.7 million households, or 2.8 million
 adults and 1.15 million children) experienced food insecurity.
 \end{columns}
+
+## Food insecurity in Canada vs the US (using US definition)[^proof2012]
+
+<!-- remember how I said that the US has a different definition of food
+insecurity? -->
+
+![Food insecurity comparison Canada vs US](img/compare-CanUS-2012.pdf)
+
+<!-- US uses different definition, so if we use their definitions, there are
+differences in our rates. Which is a bit frightening for the US situation, as
+that means they probably have a lot more potential food insecurity than they are
+reporting... Either that or we are overestimating... But what do you all think?
+Do you think Canada's approach is reasonable? Or is the US definition better?
+-->
 
 ## Household food insecurity in Canada (%) (2012)[^proof2012]
 
