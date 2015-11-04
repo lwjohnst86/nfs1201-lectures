@@ -6,7 +6,8 @@
 ##'
 ##' Use template: if (!require('package')) install.packages('package')
 gh_pkgs <- c('prodigenr', 'rstatsToolkit', 'mason', 'seer')
-pkgs <- c('rmarkdown', 'ggplot2', 'dplyr', 'tidyr', 'pander')
+pkgs <- c('rmarkdown', 'ggplot2', 'dplyr', 'tidyr', 'pander',
+          'ggthemes', 'DiagrammeR')
 for (pkg in pkgs) {
     if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
         install.packages(pkg)
@@ -27,6 +28,6 @@ panderOptions('table.alignment.default',
               function(df) ifelse(sapply(df, is.numeric), 'center', 'left'))
 
 ##' Knitr global options
-knitr::opts_chunk$set(warning = FALSE, echo = FALSE,
+knitr::opts_chunk$set(warning = FALSE, echo = FALSE, results = 'hide',
                       message = FALSE, dev = c('pdf'),
                       collapse = TRUE)
