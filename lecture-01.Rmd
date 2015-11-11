@@ -9,10 +9,6 @@ output:
         fig_caption: false
         includes:
             in_header: src/preamble.tex
-        pandoc_args: [
-            "--bibliography", "src/refs.bib",
-            "--csl", "~/Documents/bibliography/csl/vancouver.csl"
-            ]
 ---
 
 ## 5 learning expectations for today:
@@ -114,7 +110,7 @@ population.
 - Omits people living on reserves and in institutions, members of the Armed
 Forces, and people who are homeless.
 
-## Conceptualization of household food insecurity underpinning HFSSM module
+## Conceptualization of household food insecurity underpinning food security module
 
 ```{r, eval=FALSE}
 grViz("
@@ -469,6 +465,8 @@ poverty.
 7% of households reliant on seniors’ incomes are food insecure (2012)
 
 - Compared to 11% reliant on employment and 65% reliant on social assistance
+
+. . .
 
 Seniors have:
 
