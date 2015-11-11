@@ -24,10 +24,10 @@
 - Realities of food insecurity: Cost of things
     - Welfare income vs inflation
     - Budgets for various groups
+- Experiences
 - Data on food insecurity in First Nations/Inuit
 - Other, non-food related, challenges faced
 - Health and food insecurity
     - Feedback loop, lower health, more food insecure
 - Food intake of food secure vs food insecure
-
 - Food banks?
