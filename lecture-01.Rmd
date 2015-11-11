@@ -1,5 +1,5 @@
 ---
-title: "**Food Insecurity in Canada**"
+title: "**Introduction to Household Food Insecurity**"
 date: 2015-11-11
 fontsize: 9pt
 classoption: xcolor=dvipsnames
@@ -15,35 +15,23 @@ output:
             ]
 ---
 
-## Outline
+## 5 learning expectations for today:
+
+> - Think *big* and *systemic* (this is *public* health nutrition), especially
+for possible interventions
+> - Identify what food insecurity really means
+> - What limitations are there for the measurement and definition, and associated 
+over- or under-estimation
+> - Differentiate between prevalence vs number
+> - How to predict household, community, city, or provincial food insecurity
+rates and use that to create interventions
 
 ```{r, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 prodigenr::runSetup('src')
-font_import()
 loadfonts()
 ```
 
-<!--
 ## Outline
-
-- What is food insecurity
-    - Household/person level 'stages' of entering food insecurity
-    - Hunger vs food insecurity
-    - How food insecurity is measured
-    - Limitations to measuring food insecurity
-    - Different categories of food insecure
-- Insecurity in Canada
-    - Overall
-    - By province (%)
-    - Nunavut (child survey)
-    - By province (#)
-    - Composition of households
-    - Best predictors
-    - Groups most and least at risk (as %)
-    - By income
-    - Social assistance/seniors
-- Strategies used to deal with food insecurity
--->
 
 - What food insecurity is
     - Stages
@@ -55,53 +43,62 @@ loadfonts()
     - Composition of households
     - Predictors of food insecurity
 
-## Outline
-
-- **What food insecurity is**
-    - **Stages**
-    - **Measured**
-    - **Categories**
-    - **Limitations**
-- Food insecurity in Canada
-    - Overall and by province
-    - Composition of households
-    - Predictors of food insecurity
-
-# Household food insecurity: another window into problems of nutrition inequity in Canada
-
------
-
-> Food security exists when all people, at all times, have physical and economic
-access to sufficient, safe, and nutritious food to meet their dietary needs and
-food preferences for an active and healthy life
+## But, before getting into food insecurity...
 
 . . .
 
-- Individual/household level access
-- Community/societal/food system level
+Access to adequate food is a fundamental human right[^accessFoodRight]
+
+. . .
+
+> The right to adequate food is realized when every man, woman and child, alone or
+in community with others, has the physical and economic access at all times to
+adequate food or means for its procurement.[^foodRight]
+
+[^foodRight]: From the [FAO Right to Food](http://www.fao.org/righttofood/right-to-food-home/en/)
+
+[^accessFoodRight]: Universal Declaration of Human Rights, adopted by UN General
+Assembly in 1948
+
+# Household food insecurity: another window into problems of nutrition inequity in Canada
+
+## 
+
+> "Food security exists when all people, at all times, have physical and economic
+access to sufficient, safe, and nutritious food to meet their dietary needs and
+food preferences for an active and healthy life"
+
+. . .
+
+- Individual/household level
+- Society/food system level
           
------
+## 
 
 > Household food insecurity:
 > 
 > - Insecure or inadequate access to food due to financial constraints
 > - Often called 'hunger'
 
-<!-- pause here, is hunger different from food insecurity? Why? -->
+. . .
+
+\centering
+\image[width=0.75\textwidth]{img/hungerChild.png}
 
 ## Measuring 'hunger' on national surveys:	
 
-**1994:** Has your child ever experienced being hungry because the family has
-run out of food or money to buy food?
+**1994---National Longitudinal Survey of Children and Youth (NLSCY)**: Has your
+child ever experienced being hungry because the family has run out of food or
+money to buy food?
 
-**1996:** Which of the following best describes the food situation in your
-household?
+**1996---National Population Health Survey (NPHS):** Which of the following best
+describes the food situation in your household?
 
 - Always enough food to eat 
 - Sometimes not enough food to eat
 - Often not enough food to eat
 
-**1998:** In the past 12 months, did you or anyone in your household
+**1998---NPHS:** In the past 12 months, did you or anyone in your household
 
 - Worry that there would not be enough food to eat because of a lack of money?
 - Not eat the quality or variety of foods that you wanted because of a lack of
@@ -142,9 +139,6 @@ digraph {
 \centering
 ![Conceptualization](img/diagram-ConceptFI.png)
 
-<!-- Qualitative food selection -->
-<!-- Quantitative in food intake, hunger -->
-
 ## Household Food Security Survey Module (HFSSM; on the CCHS since 2004)
 
 18 questions, differentiating adults’ and children’s experiences over last 12
@@ -163,6 +157,25 @@ months:
 Note:  Prevalence estimates published by Statistics Canada and Health Canada
 only include moderate and severe food insecurity.
 
+## How do children experience food insecurity?
+
+Current measures are based on adults’ conceptualization and assumes adults
+manage household food situation, employing a sequence of strategies to minimize 
+children’s experiences of deprivation.
+
+But children also take part in household food insecurity:
+
+- Awareness at cognitive, emotional, and physical levels
+- Take responsibility for managing food resources
+- Participate in adult resource management strategies
+- Initiate strategies to extend existing food resources and augment them
+
+. . .
+
+Implications for food security measurement: *Survey module may be
+underestimating the extent and severity of food insecurity experienced by
+children and adolescents.*
+
 ## Health Canada’s coding of food insecurity[^hcCoding]
 
 | Category | 10-item adult scale | 8-item child scale |
@@ -171,15 +184,11 @@ only include moderate and severe food insecurity.
 | Moderately food insecure | 2-5 affirmed | 2-4 affirmed |
 | Severely food insecure | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
 
-Table: Food insecurity $\geq$ 2 affirmed
+Table: Food insecurity $\geq$ 2 affirmed in either category (not added together).
 
 [^hcCoding]: [Determining Food Security Status, HC website](http://www.hc-sc.gc.ca/fn-an/surveill/nutrition/commun/insecurit/status-situation-eng.php)
 
 ## USDA codings of food insecurity definitions[^usCoding]
-
-<!-- we often compare to the US, and in this case we differ slightly. US and Can
-use the same method to measure food insecurity (ie the same questionnaire), but
-they have a different definition. -->
 
 | Category | 10-item adult scale | 8-item child scale |
 |:---------|:--------------------|:-------------------|
@@ -187,16 +196,11 @@ they have a different definition. -->
 | Low food security | 3-5 affirmed | 2-4 affirmed |
 | Very low food security | $\geq$ 6 affirmed | $\geq$ 5 affirmed |
 
-Table: Food insecurity $\geq$ 3 affirmed
-
-<!-- While the US has language that includes marginal food insecurity, their 
-methods haven't changed and they still use these categories -->
+Table: Food insecurity $\geq$ 3 affirmed in either category (not added together).
 
 [^usCoding]: [Food Security, USDA](http://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/definitions-of-food-security.aspx)
 
 ## Levels of food insecurity[^proof2013]
-
-<!-- Health canada doesn't use the marginal category -->
 
 ![Categories of food insecurity for Canada](img/coding-FoodInsecurity-2013.pdf)
 
@@ -204,11 +208,9 @@ methods haven't changed and they still use these categories -->
 
 ## Why is marginal food insecurity it's own level?
 
-Why is it distinct and not grouped with 'food secure'?
+Why is it/should it be distinct and not grouped with 'food secure'?
 
 . . .
-
-<!-- Thoughts? do you think it's reasonable to include this level? -->
 
 - Marginally food insecure households report conditions of reduced food access and
 anxiety about the availability of food.
@@ -216,11 +218,15 @@ anxiety about the availability of food.
 material hardship.
 - e.g., Marginally food-insecure families were more likely to have borrowed money
 for rent; delayed bill payments and cancelled telephone, TV or internet services
-as a way to free up money for food.  (Loopstra & Tarasuk, Journal of Hunger and
-Environmental Nutrition, 2013)
+as a way to free up money for food.[^litMargFI] 
 - Research in Canada and the US suggests that a 3-category definition is most
 appropriate because there are meaningful distinctions among marginal, moderate,
-and severe food insecurity.   (Coleman-Jensen, Social Indicators Research 2010)
+and severe food insecurity.[^litMargCateg]
+
+[^litMargFI]: Loopstra & Tarasuk, Journal of Hunger and Environmental Nutrition,
+2013
+
+[^litMargCateg]: Coleman-Jensen, Social Indicators Research 2010
 
 ## Compared to scales of other countries[^otherCountries]
 
@@ -232,6 +238,8 @@ Commonalities:
 - Uncertainty and worry about food
 - Inadequate food quality
 - Insufficient food quantity
+
+. . .
 
 Consequences (vs core elements) of the experience:
 
@@ -254,9 +262,6 @@ Food security module is not always part of the common content, and on years when
 it has been optional, some provinces and territories have opted out.
 
 . . .
-
-<!-- Question: outside of the questions themselves, how accurate do you think
-the HFSSM is at determining food insecurity> -->
 
 CCHS must underestimate the true prevalence of food insecurity in Canada because
 this survey does not include people living on reserves, homeless people, and
@@ -282,6 +287,20 @@ Table: Inconsistent measurement on early surveys means that prevalence estimates
 
 Note: Last two CCHS were moderate + severe only
 
+## Limitations: Incomplete data on full picture in Canada
+
+Two other population subgroups that are very vulnerable to food insecurity but
+not included in national population health surveys:
+
+- First Nations peoples living on reserves
+- People who are homeless
+
+### On-reserve First Nations
+
+- Kangiqsujuaq, Nunavik, PQ, 2002: 40% of households food insecure
+- Kugaaruk, Nunavut, 2001: 83% of households food insecure
+- Fort Severn, Ontario, 2002: 70% of households food insecure
+
 # Food insecurity in Canada
 
 ## Outline
@@ -291,10 +310,10 @@ Note: Last two CCHS were moderate + severe only
     - Measured
     - Categories
     - Limitations
-- **Food insecurity in Canada**
-    - **Overall and by province**
-    - **Composition of households**
-    - **Predictors of food insecurity**
+- Food insecurity in Canada
+    - Overall and by province
+    - Composition of households
+    - Predictors of food insecurity
 
 ## Food insecurity over the last decade[^proof2012]
 
@@ -304,29 +323,14 @@ Note: Last two CCHS were moderate + severe only
 \image{img/overTime-Numbers-2012.pdf}
 \column{0.4\textwidth}
 In 2012, 12.6\% of Canadian households (1.7 million households, or 2.8 million
-adults and 1.15 million children) experienced food insecurity.
+adults and 1.15 million children) experienced food insecurity (includes marginal).
 \end{columns}
 
 ## Food insecurity in Canada vs the US (using US definition)[^proof2012]
 
-<!-- remember how I said that the US has a different definition of food
-insecurity? -->
-
 ![Food insecurity comparison Canada vs US](img/compare-CanUS-2012.pdf)
 
-<!-- US uses different definition, so if we use their definitions, there are
-differences in our rates. Which is a bit frightening for the US situation, as
-that means they probably have a lot more potential food insecurity than they are
-reporting... Either that or we are overestimating... But what do you all think?
-Do you think Canada's approach is reasonable? Or is the US definition better?
--->
-
 ## Household food insecurity in Canada (%) (2012)[^proof2012]
-
-. . .
-
-<!-- any thoughts on which provinces have the highest % vs the lowest percent?
--->
 
 ![Food insecurity map of Canada by percent, 2012](img/map-FoodInsecurity-2012.pdf)
 
@@ -337,10 +341,6 @@ Do you think Canada's approach is reasonable? Or is the US definition better?
 \vspace{-1cm}
 
 ![Food insecure children map of Canada by percent, 2012](img/map-FoodInsecurity-Child-2012.pdf)
-
-## Food insecurity by province as a percent of total food insecurity[^proof2012]
-
-![Food insecurity by province, as a percent](img/provinces-FoodInsecurity-Percent-2012.pdf)
 
 ## Nunavut Inuit Child Health Survey, 2007-08
 
@@ -354,23 +354,17 @@ Results:
 - Child food insecurity: 56%
     - 31% moderate + 25% severe
 
+## Food insecurity by province as a percent of total food insecurity[^proof2012]
+
+![Food insecurity by province, as a percent](img/provinces-FoodInsecurity-Percent-2012.pdf)
+
 ## Food insecurity by province, by household count[^proof2012]
-
-. . .
-
-<!-- can anyone guess which provinces have the most households with food
-insecurity? -->
 
 ![Food insecurity by province, household numbers](img/provinces-FoodInsecurity-Numbers-2012.pdf)
 
 ## Composition of food insecure households[^proof2012]
 
 ![Composition of food insecure households](img/householdComposition-2012.pdf)
-
-<!-- any interesting thoughts on this figure? -->
-
-## Food insecurity in Canada and the US in 2011
-
 
 ## Single best predictor of household food insecurity = income[^cchs2011]
 
@@ -381,10 +375,11 @@ data.frame(
     ) %>% 
     mutate(Income = factor(Income, levels = unique(Income), ordered = TRUE)) %>%
     ggplot(aes(Income, Prevalence)) +
-    geom_line(aes(group = 1)) +
+    geom_line(aes(group = 1), colour = 'NavyBlue', size = 1) +
+    geom_text(aes(label = Prevalence), vjust = 0, hjust = 0, size = 3) +
     ylab('Percent Insecure (%)') +
     xlab('Household income (000s),\nadjusted for household size') +
-    theme_tufte(base_family = 'DejaVu Sans')
+    theme_tufte(base_family = 'sans')
 ```
 
 Food insecurity captures material deprivation: Product of income (size,
@@ -399,20 +394,34 @@ LIM is 50% of median household income, adjusted for household size.
 
 . . .
 
-<!-- what would you all predict would be the case? based on this ratio? -->
-
 ![Income by LIM ratio](img/incomeLIM-2012.pdf)
 
 ## Food insecure main source of income[^proof2012]
 
 ![Main income source](img/mainIncome-2012.pdf)
 
+## Why are so many households reliant on employment incomes food insecure?
+
+. . .
+
+- Low-waged jobs
+- Short-term, part-time employment
+- Single (vs dual) earner households
+- Greater vulnerability among workers who are visible minorities and those with
+limited education[^litMinorities] 
+
+Combined with: 
+
+- Inadequate income transfers provided to supplement low employment incomes
+
+[^litMinorities]: McIntyre et al, Public Health Nutrition 2014
+
 ## 4 predictors, other than income, consistently seen in population survey analyses[^predLit]
 
 . . .
 
 - Lack of home ownership
-- Aboriginal status
+- First Nations, Inuit, or Metis status
 - Lone-motherhood
 - Reliance on social assistance
 
@@ -421,31 +430,71 @@ Vozoris & Tarasuk, J Nutr 2003; Ledrou & Gervais, Health Reports 2005; Health
 Canada, 2007; Tarasuk & Vogt, Can J Public Health 2009; Willows et
 al, Public Health Nutr 2008.
 
+## Our social safety net:
+ 
+- A myriad of federal and provincial programs designed to support people facing
+financial hardships, e.g. Employment Insurance, welfare, disability supports,
+old-age pensions, subsidized housing, tax credits, etc.
+
+- None of these programs are specifically designed to achieve household food
+security, and they appear to yield very different results.
+
 ## 65% of households reliant on social assistance are food insecure
 
-Incomes fall below basic living costs in most jurisdictions.
-
-Limits on assets mean no capacity to buffer sudden increases in expenses or
-interruptions in income.
-
-Most provinces *do not index* social assistance incomes to inflation.
-
-## Benefits to senior citizens
+- Incomes fall below basic living costs in most jurisdictions.
+- Limits on allowable assets mean likely no savings, so no capacity to buffer
+sudden increases in expenses or interruptions in income.
+- Most provinces *do not index* social assistance incomes to inflation.
 
 . . .
 
-<!-- remember how low senior citizens were to food insecurity? Any thoughts on
-why? -->
+**Being on social assistance almost guarantees food insecurity.**
 
-7% of households reliant on seniors’ incomes are food insecure
+## Why are social assistance recipients so vulnerable? 
+
+Incomes fall below basic living costs in most jurisdictions, as evidenced by 
+Nutritious Food Basket costing comparisons.
+
+. . .
+
+### The exception: Newfoundland and Labrador
+
+- Poverty Reduction Strategy launched in 2006, tackling breadth and depth of
+poverty. 
+- Social assistance benefits were increased and indexed to inflation. 
+- Asset limits and earnings exemptions were raised
+
+## Benefits to senior citizens
+
+7% of households reliant on seniors’ incomes are food insecure (2012)
+
+- Compared to 11% reliant on employment and 65% reliant on social assistance
 
 Seniors have:
 
-- Guaranteed annual incomes (indexed to inflation)
+- Guaranteed annual incomes (*indexed* to inflation)
 - Drug coverage
 - Transit subsidies
-- ‘Seniors days’ discounts
+- 'Seniors day' discounts
 - Often own their home
+
+. . .
+
+Turning 65 drops the risk of food insecurity in half for low-income
+adults[^litSeniors]
+
+[^litSeniors]: Emery et al, Prev Med. 2013
+
+## 5 learning expectations for today:
+
+- Think *big* and *systemic* (this is *public* health nutrition), especially
+for possible interventions
+- Identify what food insecurity really means
+- What limitations are there for the measurement and definition, and associated 
+over- or under-estimation
+- Differentiate between prevalence vs number
+- How to predict household, community, city, or provincial food insecurity
+rates and use that to create interventions
 
 ## For next week, please read:
 
