@@ -1,0 +1,34 @@
+Household,Item,Dollar
+"Family of 4",Basic allowance, 453
+"Family of 4",Shelter allowance, 695
+"Family of 4",Child/family benefits, 736
+"Family of 4",GST/HST Benefit, 66
+"Family of 4",ON Trillium Benefit, 139
+"Family of 4",Food, -741
+"Family of 4",Rent, -988
+"One-parent 2 kids", Basic allowance, 350
+"One-parent 2 kids", Shelter allowance, 641
+"One-parent 2 kids", Child/family benefits, 759
+"One-parent 2 kids", GST/HST Benefit, 66
+"One-parent 2 kids", ON Trillium Benefit, 111
+"One-parent 2 kids", Food, -560
+"One-parent 2 kids", Rent, -820
+"One male (31-50y)", Basic allowance, 230
+"One male (31-50y)", Shelter allowance, 376
+"One male (31-50y)", GST/HST Benefit, 22
+"One male (31-50y)", ON Trillium Benefit, 60
+"One male (31-50y)", Food, -249
+"One male (31-50y)", Rent (bachelor), -543
+"One male: disability",Basic allowance, 596
+"One male: disability",Shelter allowance, 479
+"One male: disability",GST/HST Benefit, 29
+"One male: disability",ON Trillium Benefit, 63
+"One male: disability",Food, -249
+"One male: disability",Rent (1 bedroom), -694
+"One male (70+y)", Old Age Security/GIS, 1287
+"One male (70+y)", Income System, 83
+"One male (70+y)", GST/HST Benefit, 33
+"One male (70+y)", ON Trillium Benefit, 96
+"One male (70+y)", Food, -238
+"One male (70+y)", Rent (1 bedroom), -649
+
